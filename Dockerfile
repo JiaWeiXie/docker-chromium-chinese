@@ -20,7 +20,7 @@ RUN wget -q -O /etc/apk/keys/sgerrand.rsa.pub https://alpine-pkgs.sgerrand.com/s
     wget https://github.com/sgerrand/alpine-pkg-glibc/releases/download/2.35-r1/glibc-2.35-r1.apk && \
     wget https://github.com/sgerrand/alpine-pkg-glibc/releases/download/2.35-r1/glibc-bin-2.35-r1.apk && \
     wget https://github.com/sgerrand/alpine-pkg-glibc/releases/download/2.35-r1/glibc-i18n-2.35-r1.apk && \
-    apk add glibc-bin-2.35-r1.apk glibc-i18n-2.35-r1.apk glibc-2.35-r1.apk
+    apk --no-cache --force-overwrite add glibc-bin-2.35-r1.apk glibc-i18n-2.35-r1.apk glibc-2.35-r1.apk
 
 RUN /usr/glibc-compat/bin/localedef -i zh_TW -f UTF-8 zh_TW.UTF-8
 
